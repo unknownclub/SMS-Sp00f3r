@@ -13,7 +13,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-<center><h3>SMS Sp00f3r by un4ckn0wl3z [HAXTIVITIEZ]</h3><br>
+<center><h3>SMS Sp00f3r by un4ckn0wl3z [HAXTIVITIEZ] v.1.0.0</h3><br>
 Website: <a href="https://haxtivitiez.wordpress.com/" target="_blank">https://haxtivitiez.wordpress.com/</a><br>
 Special Thank To: God'z Peace. (<a href="https://www.facebook.com/Godz.Peace5678" target="_blank">God'z Peace FB</a>)<br>
 <img src="https://media.giphy.com/media/amxLHEPgGDCKs/giphy.gif" height="150" width="150" />
@@ -25,7 +25,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 //echo "<b>Balance : </b>".$response;
 $json = json_decode($response, true);
-echo "<b>Balance : </b>".$json['value']." EURO or ".($json['value'])*1.073." USD<br>";
+echo "<b>Balance(ยอดเครดิตคงเหลือ)~ : </b>".number_format($json['value'],2)." EUR or ".number_format((($json['value'])*1.073),2)." USD<br>";
+echo "<b>Remain(ข้อความที่สามารถส่งได้)~ : </b>".number_format(($json['value']/0.0230))." SMSs";
 ?>
 <form method="POST" action="sendme.php">
   <div class="form-group">
@@ -44,7 +45,7 @@ echo "<b>Balance : </b>".$json['value']." EURO or ".($json['value'])*1.073." USD
     <label for="Pass">Pass:</label>
     <input type="password" class="form-control" name="Passw" placeholder="ป้อนรหัสผ่าน (ขอรหัสผ่านได้ที่ Godz)" required>
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-info">Submit</button>
 </form>
 </body>
 </html>
