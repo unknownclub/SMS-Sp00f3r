@@ -25,8 +25,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 //echo "<b>Balance : </b>".$response;
 $json = json_decode($response, true);
-echo "<b>Balance(ยอดเครดิตคงเหลือ)~ : </b>".number_format($json['value'],2)." EUR or ".number_format((($json['value'])*1.073),2)." USD<br>";
-echo "<b>Remain(ข้อความที่สามารถส่งได้)~ : </b>".number_format(($json['value']/0.0230))." SMSs";
+echo "<b>Balance(ยอดเครดิตคงเหลือ)~ : </b>".number_format($json['value'],2)." EUR or ".number_format((($json['value'])*1.073),2)." USD"." or ".number_format(((($json['value'])*1.073))*34.3556,2)." BHT<br>";
+echo "<b>Remain(ข้อความที่สามารถส่งได้)~ : </b>".number_format(($json['value']/0.0230))." SMSs"." | <i><u>(0.023 EUR/SMS)</u></i>";
 ?>
 <form method="POST" action="sendme.php">
   <div class="form-group">
