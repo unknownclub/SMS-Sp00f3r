@@ -40,7 +40,7 @@ echo '
 
 
 
-if ($Passw == "hax"){
+if ($Passw == "yourpassword"){
 	echo "<html>";
 	echo "<b>From: ".$from."</b>"."<br>";
 	echo "<b>To: ".$to."</b>"."<br>";
